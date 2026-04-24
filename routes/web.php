@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 Route::get('/gallery/{id}', [MainController::class, 'gallery'])->name('gallery');
+
+Route::get('/news', [ArticleController::class, 'index'])->name('articles.index');
 
 Route::get('/signin', [AuthController::class, 'create'])->name('signin.create');
 Route::post('/signin', [AuthController::class, 'registration'])->name('signin.registration');

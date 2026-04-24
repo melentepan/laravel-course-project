@@ -245,6 +245,39 @@
             opacity: 0.9;
         }
 
+        .news-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .news-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #ffffff;
+            padding: 14px;
+        }
+
+        .news-item h3 {
+            margin: 0 0 8px;
+            color: #1f2f7a;
+            font-size: 22px;
+        }
+
+        .news-item p {
+            margin: 0 0 12px;
+            font-size: 16px;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            display: block;
+        }
+
         footer {
             margin-top: 18px;
             color: #666;
@@ -302,6 +335,10 @@
             .gallery-image-box {
                 padding: 8px;
             }
+
+            .news-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -315,6 +352,7 @@
             <nav>
                 <div class="menu">
                     <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Главная</a>
+                    <a href="{{ route('articles.index') }}" class="{{ request()->routeIs('articles.*') ? 'active' : '' }}">Новости</a>
                     <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">О нас</a>
                     <a href="{{ route('contacts') }}" class="{{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
                     <a href="{{ route('signin.create') }}" class="{{ request()->routeIs('signin.*') ? 'active' : '' }}">Sign In</a>

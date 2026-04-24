@@ -48,6 +48,16 @@
             letter-spacing: 0.2px;
         }
 
+        .site-title-link {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .site-title-link:hover {
+            opacity: 0.8;
+        }
+
         .menu {
             display: flex;
             align-items: center;
@@ -89,15 +99,106 @@
 
         h2 {
             margin-top: 0;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
             color: #1f2f7a;
-            font-size: 36px;
+            font-size: 34px;
         }
 
         p {
             line-height: 1.6;
             font-size: 18px;
             margin: 0 0 12px;
+        }
+
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .article-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            background: #ffffff;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: opacity 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .article-card:hover {
+            opacity: 0.92;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
+            border-color: #d8deea;
+        }
+
+        .article-card h3 {
+            margin: 0 0 8px;
+            color: #1f2f7a;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .article-card p {
+            margin-bottom: 14px;
+            font-size: 17px;
+            color: #374151;
+        }
+
+        .preview-link {
+            display: block;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .preview-image {
+            width: 100%;
+            height: 240px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            display: block;
+            object-fit: cover;
+        }
+
+        .full-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #cfd8e3;
+            margin: 0;
+            display: block;
+        }
+
+        .gallery-date {
+            margin: -4px 0 12px;
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        .gallery-image-box {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 14px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            background: #1f2f7a;
+            border: 1px solid #1f2f7a;
+            border-radius: 8px;
+            padding: 8px 12px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .back-link:hover {
+            background: #27399a;
+            transform: translateY(-1px);
         }
 
         .contact-item {
@@ -148,13 +249,35 @@
             p {
                 font-size: 18px;
             }
+
+            .article-card h3 {
+                font-size: 20px;
+            }
+
+            .article-card p {
+                font-size: 16px;
+            }
+
+            .preview-image {
+                height: 200px;
+            }
+
+            .article-list {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image-box {
+                padding: 8px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container header-inner">
-            <h1>Сайт курсового проекта</h1>
+            <h1>
+                <a href="{{ route('home') }}" class="site-title-link">Курсовой проект</a>
+            </h1>
 
             <nav>
                 <div class="menu">

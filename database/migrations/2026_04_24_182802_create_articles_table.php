@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('short_desc');
             $table->text('content');
             $table->string('preview_image')->nullable();
+            $table->string('full_image')->nullable();
             $table->timestamps();
         });
     }

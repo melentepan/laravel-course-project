@@ -21,6 +21,7 @@ class ArticleFactory extends Factory
             'short_desc' => fake()->sentence(12),
             'content' => fake()->paragraphs(4, true),
             'preview_image' => fake()->randomElement(['preview.jpg', 'preview_2.jpg']),
+            'full_image' => fake()->randomElement(['full.jpeg', 'full_2.jpeg']),
         ];
     }
 }

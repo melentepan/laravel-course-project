@@ -212,6 +212,39 @@
             color: #2d3a8c;
         }
 
+        .signin-form {
+            max-width: 420px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .signin-form label {
+            font-weight: 600;
+            color: #1f2f7a;
+        }
+
+        .signin-form input {
+            padding: 9px 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .signin-form button {
+            margin-top: 4px;
+            background: #1f2f7a;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 12px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .signin-form button:hover {
+            opacity: 0.9;
+        }
+
         footer {
             margin-top: 18px;
             color: #666;
@@ -284,6 +317,7 @@
                     <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Главная</a>
                     <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'active' : '' }}">О нас</a>
                     <a href="{{ route('contacts') }}" class="{{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
+                    <a href="{{ route('signin.create') }}" class="{{ request()->routeIs('signin.*') ? 'active' : '' }}">Sign In</a>
                 </div>
             </nav>
         </div>
